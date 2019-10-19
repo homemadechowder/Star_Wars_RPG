@@ -13,6 +13,11 @@ $(document).ready(function() {
     $("#obi3").hide();
     $("#yoda3").hide();
     $("#qui3").hide();
+    $("#luke4").hide();
+    $("#obi4").hide();
+    $("#yoda4").hide();
+    $("#qui4").hide();
+
 
     $("#luke").on("click", function(){
 
@@ -51,6 +56,8 @@ $(document).ready(function() {
         $("#yoda3").show();
         $("#qui3").show();
         
+        console.log($(this).text());
+        
     });
     $("#qui").on("click", function(){
 
@@ -63,8 +70,16 @@ $(document).ready(function() {
         $("#yoda3").show();
         $("#luke3").show();
         
- });
+    });
+
+    $("#qui3").on("click", function(){
+
+        $("#qui4").show();
+       
+      
+    });
     console.log(isCharSelected)
+    
     function charSelection(){
       
         console.log($(this).text());
@@ -76,7 +91,7 @@ $(document).ready(function() {
         
         $("#enemies").text("Enemies Available To Attack ");
         $("#fightSection").text("Fight Section");
-        $("").text("Enemies Available To Attack: ");
+       
         $("#defender").text("Defender is ");   
      }
 })
