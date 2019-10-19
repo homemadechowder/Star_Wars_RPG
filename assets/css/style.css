@@ -20,18 +20,39 @@
     border: 3px solid green;
     background-color: white;
 }
+
+.charBox2{
+    height: 170px;
+    width: 200px;
+    padding: 10px;
+    margin: 5px;
+    border: 3px solid red;
+    background-color: white;
+}
 .charName{
     font-family: 'Oswald', sans-serif;
     margin: 0 auto;
     text-align: center;
+    color: black;
+}
+#charSelect{
+    font-family: 'Oswald', sans-serif;
+    color: white;
 }
 .charValue{
     font-family: 'Oswald', sans-serif;
     margin: 0 auto;
     text-align: center;
+    color: black;
 }
 .image{
     margin-left: 10px;
     height: 100px;
     width: 150px;
+}
+
+.row{
+    font-family: 'Oswald', sans-serif;
+    color: white;
+
 }
