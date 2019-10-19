@@ -1,0 +1,37 @@
+
+.background{
+    background-image: url("../images/background.jpg");
+    height: 1080px;
+    width: 100%;
+}
+#title{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 300%;
+    font-weight: bold;
+    color: white;
+    
+}
+.charBox{
+    height: 170px;
+    width: 200px;
+    padding: 10px;
+    margin: 5px;
+    border: 3px solid green;
+    background-color: white;
+}
+.charName{
+    font-family: 'Oswald', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+.charValue{
+    font-family: 'Oswald', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+.image{
+    margin-left: 10px;
+    height: 100px;
+    width: 150px;
+}
