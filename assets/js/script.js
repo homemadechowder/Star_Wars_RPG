@@ -9,7 +9,7 @@ $(document).ready(function() {
     var enemy = "";
     var enemyHealth = 0;
     var enemyCount = 0;
-    var enemyAtk = "";
+    var enemyAtk = 0;
     
     //Hide all the not needed portions, this part definitely has a more elegant way but CTRLC CTRLV works.
     $("#luke2").hide();
