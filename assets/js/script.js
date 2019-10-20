@@ -227,7 +227,14 @@ $(document).ready(function() {
 
         function enemyCounter(){
             if (enemyCount == 3){
-            alert("You win, Refresh to Restart");
+            $("#attackText").hide();
+            $("#counterText").hide();
+            $("#defender").hide();
+            $("#fightSection").hide();
+            $("#attack").hide();
+            $("flavourText").hide();
+            $("#enemies").text("YOU WIN! SEE YOU IN SEQUELS! GOOD LUCK! REFRESH TO RESTART");
+
             }
         }
             
