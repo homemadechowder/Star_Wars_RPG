@@ -31,8 +31,66 @@ I declared variables:
 ```
 Along with the variables I also used jquery to set the character boxes to hide on default, so I can show later in next phases.
 
-### Character Selection
+### Character Selection and Enemy Settings
+I set up each character boxes with these onclick settings using their assigned ID's. If they are clicked, then the attack stat will be set to their attack. The attackInc is used for incrementing the attacks for the attack phase. I was planning on giving certain characters a low base attack stat but is able to scale up faster. The math behind this I can easily change but for now this is what each character's profile looks like. I will hide all the other characters and show the one's not selected in the enemy available row.
+```javascript
+ $("#luke").on("click", function(){
+        
+        attack = 27;
+        attackInc = 27;
+        charName = "Luke Skywalker"    
+        isCharSelected = true;
+        health = 150;
+        charSelection();
+        
+        $("#luke2").show();
+        $("#obi3").show();
+        $("#yoda3").show();
+        $("#qui3").show();
+    
+    });
+```
+From the enemies available row I can choose who to fight. This is the same idea with the character selection except the selected one will hide and the one in the defender section will show.
 
+### Attack Phase
+The attack phase is triggered by clicking on the attack button. The code snippet is shown below:
+```javascript
+ $("#attack").on("click", function(){
+        enemyHealth -= attack;
+        $("#attackText").html ("You attacked for " + attack + " damage to the enemy.");
+        attack += attackInc;
+        //console.log(attack);
+        //console.log(enemyHealth);
+        //console.log(charName);
+        
+        
+        $("#counterText").html ("You were counter-attacked for "+ enemyAtk+ " damage.");
+       
+        health -= enemyAtk;
+        console.log(health);
+        $("#flavourText").text("");
+        if (charName == "Luke Skywalker"){
+
+            $("#lukehealth").text(health);
+        }
+```
+I increment the attack using the attackInc and I decrement enemyHealth with attack. I set the enemyHealth decrement first because attack hasn't been modified yet. Then I correctly ordered the jquery to display the correct amount of damage supposedly dealt.
+
+### Win Condition
+For every enemy defeated I increment enemyCount by 1. Once it reaches 3 (since it starts from 0). The game will end, hiding most elements to show a winning text.
+
+```javascript
+if (health < 0){
+            if (enemyCount == 3){
+                alert ("You're one turn from dying, you did it")
+            }
+            else{
+                alert ("You're gonna need more midichlorians for that");
+            }
+        }
+
+```
+There is a special condition that triggers if you are one turn from dying.
 
 
 
