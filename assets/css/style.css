@@ -12,6 +12,9 @@
     color: white;
     
 }
+.battle{
+    font-size: 150%;
+}
 .charBox{
     height: 170px;
     width: 200px;
