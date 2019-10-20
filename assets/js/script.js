@@ -8,6 +8,8 @@ $(document).ready(function() {
     var health = 0;
     var enemy = "";
     var enemyHealth = 0;
+    var enemyCount = 0;
+    var enemyAtk = "";
     
     //Hide all the not needed portions, this part definitely has a more elegant way but CTRLC CTRLV works.
     $("#luke2").hide();
@@ -65,7 +67,7 @@ $(document).ready(function() {
         charSelection();
         $("#yoda2").show();
         $("#obi3").show();
-        $("#yoda3").show();
+        $("#luke3").show();
         $("#qui3").show();
         
         console.log($(this).text());
@@ -92,6 +94,7 @@ $(document).ready(function() {
 
         enemy = "Luke Skywalker";
         enemyHealth = 150;
+        enemyAtk = 30;
         $("#defender").text("Defender is " + enemy);   
       
     });
@@ -102,6 +105,7 @@ $(document).ready(function() {
 
         enemy = "Obi-Wan Kenobi";
         enemyHealth = 170;
+        enemyAtk = 27;
         $("#defender").text("Defender is " + enemy);   
       
     });
@@ -112,6 +116,7 @@ $(document).ready(function() {
 
         enemy = "Yoda";
         enemyHealth = 230;
+        enemyAtk = 23;
         $("#defender").text("Defender is " + enemy);   
       
     });
@@ -122,6 +127,7 @@ $(document).ready(function() {
 
         enemy = "Qui-Gon Jinn";
         enemyHealth = 190;
+        enemyAtk = 25;
         $("#defender").text("Defender is " + enemy);   
       
     });
@@ -150,11 +156,11 @@ $(document).ready(function() {
         console.log(charName);
         
         
-        $("#counterText").html ("You were counter-attacked for "+ attackInc+ " damage.");
+        $("#counterText").html ("You were counter-attacked for "+ enemyAtk+ " damage.");
        
-        health -= attackInc;
+        health -= enemyAtk;
         console.log(health);
-       
+        $("#flavourText").text("");
         if (charName == "Luke Skywalker"){
 
             $("#lukehealth").text(health);
@@ -182,10 +188,85 @@ $(document).ready(function() {
         else if (enemy == "Qui-Gon Jinn"){
             $("#qui4health").text(enemyHealth);
         }
+   
         
+        enemyHealthBar();
+
+        if (health < 0){
+            if (enemyCount == 3){
+                alert ("You're one turn from dying, you did it")
+            }
+            else{
+                alert ("You're gonna need more midichlorians for that");
+            }
+        }
+
+        
+        console.log(enemyCount);
+        enemyCounter();
+    });
+        function enemyChecker(){
+            
+        if (enemy == "Luke Skywalker" &&  $("#luke4").hide()){
+            alert("A new hope? more like a new nope!");
+            $("#flavourText").text("You struck a fatal blow to Luke Skywalker, Pick another enemy to attack");
+        }
+        else if (enemy == "Obi-Wan Kenobi" &&  $("#obi4").hide() ){
+            alert("Guess he Helloed this last There this time");
+            $("#flavourText").text("You struck a fatal blow to Obi-Wan Kenobi, Pick another enemy to attack");
+        }
+        else if (enemy == "Yoda"&& $("#yoda4").hide()){
+            alert("Wrecked, He has been");
+            $("#flavourText").text("You struck a fatal blow to Yoda, Pick another enemy to attack");
+        }
+        else if (enemy == "Qui-Gon Jinn" && $("#qui4").hide()){
+            alert("I guess you really put the Gone in Qui Gon")
+            $("#flavourText").text("You struck a fatal blow to Qui Gon Jinn, Pick another enemy to attack");
+        }
+        }
+
+        function enemyCounter(){
+            if (enemyCount == 3){
+            alert("You win, Refresh to Restart");
+            }
+        }
+            
+        function enemyHealthBar(){
+
+        if (enemyHealth < 0){
+            if (enemy == "Luke Skywalker"){
+                enemyCount++;
+                $("#luke4").hide();
                 
+                console.log("luke dead");
+                
+                enemyChecker();
+            }
+            else if (enemy == "Obi-Wan Kenobi"){
+                enemyCount++;
+                $("#obi4").hide();
+
+                enemyChecker();
+                
+            }
+            else if (enemy == "Yoda"){
+                enemyCount++;
+                $("#yoda4").hide();
+
+                enemyChecker();
+                
+            }
+            else if (enemy == "Qui-Gon Jinn"){
+                enemyCount++;
+                $("#qui4").hide();
+
+                enemyChecker();
+                
+            }
+            
+        }
+        }   
     });
     
     
 
-})
