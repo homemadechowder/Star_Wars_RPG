@@ -70,7 +70,7 @@ $(document).ready(function() {
         $("#luke3").show();
         $("#qui3").show();
         
-        console.log($(this).text());
+       
         
     });
     $("#qui").on("click", function(){
@@ -151,8 +151,8 @@ $(document).ready(function() {
         enemyHealth -= attack;
         $("#attackText").html ("You attacked for " + attack + " damage to the enemy.");
         attack += attackInc;
-        console.log(attack);
-        console.log(enemyHealth);
+        // console.log(attack);
+        // console.log(enemyHealth);
         console.log(charName);
         
         
@@ -174,7 +174,9 @@ $(document).ready(function() {
         }
         else if (charName == "Qui-Gon Jinn"){
             $("#quihealth").text(health);
-        }
+            
+        };
+        console.log($("#quihealth").text(health));
 
         if (enemy == "Luke Skywalker"){
             $("#luke4health").text(enemyHealth);
@@ -186,8 +188,9 @@ $(document).ready(function() {
             $("#yoda4health").text(enemyHealth);
         }
         else if (enemy == "Qui-Gon Jinn"){
+           
             $("#qui4health").text(enemyHealth);
-        }
+        };
    
         
         enemyHealthBar();
@@ -197,12 +200,18 @@ $(document).ready(function() {
                 alert ("You're one turn from dying, you did it")
             }
             else{
-                alert ("You're gonna need more midichlorians for that");
+                $("#attackText").hide();
+                $("#counterText").hide();
+                $("#defender").hide();
+                $("#fightSection").hide();
+                $("#attack").hide();
+                $("flavourText").hide();
+                $("#enemies").text("YOU HAVE BEEN DEFEATED BY YOUR ENEMY, REFRESH TO RESTART!");
             }
-        }
+        };
 
         
-        console.log(enemyCount);
+      
         enemyCounter();
     });
         function enemyChecker(){
