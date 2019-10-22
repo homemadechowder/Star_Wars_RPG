@@ -7,7 +7,7 @@
 In this section I will go over my thought process and how I went about creating my website structure.
 
 ## index.html
-In the index.html, I primarily referred to the picture and demo given. THe assignment did not explicitly state to strictly follow the layout of the game, so I took minor and inconsequential creative freedoms to create some of my items and placements. For instance, I added a margin of 5 around the character selection box simply because I think it looked nicer that way. 
+In the index.html, I primarily referred to the picture and demo given. The assignment did not explicitly state to strictly follow the layout of the game, so I took minor and inconsequential creative freedoms to create some of my items and placements. For instance, I added a margin of 5 around the character selection box simply because I think it looked nicer that way. 
 
 The body of the index was done using a grid system provided by bootstrap. Credits to bootstrap, it gave me a lot more time to work on the scripting portion of the project since I didn't have worry about box positions. I had 4 rows on character sets that is hidden until they are specified to show, I did this to prevent any unwanted "this" maneuvers I may commit later on in the code. This method is quite bruteforced but it works before I learn something more reliable.
 
